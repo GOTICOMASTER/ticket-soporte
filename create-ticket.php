@@ -97,13 +97,13 @@ if (isset($_POST['send'])) {
 
 
                                     <div class="form-group">
-                                        <label class="col-md-3 col-xs-12 control-label">Tipo de Tarea</label>
+                                        <label class="col-md-3 col-xs-12 control-label">Tipo de Reclamo</label>
                                         <div class="col-md-6 col-xs-12">
                                             <select name="tasktype" class="form-control select" required>
                                                 <option value="">Seleccionar</option>
-                                                <option>Incidente Lógica</option>
-                                                <option>Fallo a Nivel de Servidor</option>
-                                                <option>Error capa de aplicación</option>
+                                                <option>Equipo Dañado</option>
+                                                <option>Equipo defectuoso</option>
+                                                <option>No saber usar equipo</option>
 
                                             </select>
                                         </div>

@@ -134,7 +134,7 @@ if (isset($_POST['submit'])) {
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 text-left text-left control-label">Empresa</label>
+                                                <label class="col-md-3 text-left text-left control-label">Direccion</label>
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
@@ -149,7 +149,7 @@ if (isset($_POST['submit'])) {
                                                 <div class="col-md-9">
                                                     <div class="form-group">
                                                         <label class="check">
-                                                            <input type="checkbox" class="icheckbox" name="services[]" value=" Formateo de Dispositivo"> Formateo de Dispositivo</label>
+                                                            <input type="checkbox" class="icheckbox" name="services[]" value=" Devolucion de producto"> Devolucion de producto</label>
                                                     </div>
 
                                                 </div>
