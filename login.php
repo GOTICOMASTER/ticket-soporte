@@ -1,6 +1,7 @@
 <?php
 session_start();
-error_reporting(0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include("dbconnection.php");
 if (isset($_POST['login'])) {
   $ret = mysqli_query($con, "SELECT * FROM user WHERE email='" . $_POST['email'] . "' and password='" . $_POST['password'] . "'");
@@ -71,9 +72,10 @@ if (isset($_POST['login'])) {
         </p>
       </div>
       <div class="col-md-5 "> <br>
-        <p style="color:#F00"><?php echo $_SESSION['action1']; ?><?php echo $_SESSION['action1'] = ""; ?></p>
+        <?php if(isset($_SESSION['action1'])): ?>
+          <p style="color:#F00"><?php echo $_SESSION['action1']; ?><?php $_SESSION['action1'] = ""; ?></p>
+        <?php endif; ?>
         <form id="login-form" class="login-form" action="" method="post">
-          <p style="color: #F00"><?php echo $_SESSION['action1']; ?><?php echo $_SESSION['action1'] = ""; ?></p>
           <div class="form-group">
             <label for="email" class="control-label">Correo</label>
             <input type="text" class="form-control rounded-0" id="email" name="email" required="required">
@@ -87,8 +89,6 @@ if (isset($_POST['login'])) {
           </div>
         </form>
       </div>
-
-
     </div>
   </div>
   <script src="assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>

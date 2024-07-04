@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CRM Project using PHP and MySQL</title>
+  <title>CRM Project</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,8 +52,10 @@
   <header class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
-        <h1 class="masthead-heading mb-0">Sistema de Generación de Tickets</h1>
-        <h2 class="masthead-subheading mb-0">en PHP y MySQL</h2>
+        <h1 class="masthead-heading mb-0">Generación de Tickets</h1>
+        <h2 class="masthead-subheading mb-0">‎ </h2>
+        <h2 class="masthead-subheading mb-0">‎ </h2>
+        <h2 class="masthead-subheading mb-0">‎ </h2>
         <a href="registration.php" class="btn btn-primary btn-xl rounded-pill mt-5">Registro de Usuario</a>
       </div>
     </div>
