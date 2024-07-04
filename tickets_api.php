@@ -1,5 +1,13 @@
 <?php
 header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: OPTIONS,GET,POST,PUT,DELETE");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+$request_method = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$request_method = explode( '/', $uri );
 $servername = "localhost";
 $username = "ticket_user";
 $password = "123456789";
@@ -14,15 +22,21 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$request_method = $_SERVER["REQUEST_METHOD"];
+if ($request_method[1] !== 'person') {
+    header("HTTP/1.1 404 Not Found");
+    exit();
+}
+
+// $request_method = $_SERVER["REQUEST_METHOD"];
 
 switch($request_method) {
     case 'GET':
-        // Obtener todos los tickets
+        // esto obtiene todos los tickets
+        return "Hola mundo";
         getTickets();
         break;
     case 'POST':
-        // Crear un nuevo ticket
+        // esto crea nuevo ticket 
         createTicket();
         break;
     default:
