@@ -1,7 +1,5 @@
 <?php
 session_start();
-//echo $_SESSION['id'];
-//$_SESSION['msg'];
 include("dbconnection.php");
 include("checklogin.php");
 check_login();
@@ -62,19 +60,30 @@ check_login();
 
       <h4> <span class="semi-bold">Tickets</span></h4>
       <br>
-      <?php $rt = mysqli_query($con, "select * from ticket where email_id='" . $_SESSION['login'] . "'");
-      $num = mysqli_num_rows($rt);
-      if ($num > 0) {
 
-        while ($row = mysqli_fetch_array($rt)) {
+      <?php
+      // Obtener datos de la API simulada
+      $use_api = false; // Alterna entre true o false para usar la API o la base de datos
+      if ($use_api) {
+        $tickets = fetch_data('ticket');
+      } else {
+        $result = mysqli_query($con, "SELECT * FROM ticket WHERE email_id='" . $_SESSION['login'] . "'");
+        $tickets = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+          $tickets[] = $row;
+        }
+      }
+
+      if (!empty($tickets)) {
+        foreach ($tickets as $ticket) {
       ?>
           <div class="row">
             <div class="col-md-12">
               <div class="grid simple no-border">
                 <div class="grid-title no-border descriptive clickable">
-                  <h4 class="semi-bold"><?php echo $row['subject']; ?></h4>
-                  <p><span class="text-success bold">Ticket #<?php echo $row['ticket_id']; ?></span> - Fecha de Creación <?php echo $row['posting_date']; ?>
-                    <span class="label label-important"><?php echo $row['status']; ?></span>
+                  <h4 class="semi-bold"><?php echo $ticket['subject']; ?></h4>
+                  <p><span class="text-success bold">Ticket #<?php echo $ticket['ticket_id']; ?></span> - Fecha de Creación <?php echo $ticket['posting_date']; ?>
+                    <span class="label label-important"><?php echo $ticket['status']; ?></span>
                   </p>
                   <div class="actions"> <a class="view" href="javascript:;"><i class="fa fa-angle-down"></i></a> </div>
                 </div>
@@ -84,14 +93,14 @@ check_login();
                       <div class="user-profile-pic-normal"> <img width="35" height="35" data-src-retina="assets/img/user.png" data-src="assets/img/user.png" src="assets/img/user.png" alt=""> </div>
                     </div>
                     <div class="info-wrapper">
-                      <div class="info"><?php echo $row['ticket']; ?> </div>
+                      <div class="info"><?php echo $ticket['ticket']; ?> </div>
                       <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"></div>
                   </div>
                   <br>
 
-                  <?php if ($row['admin_remark'] != '') : ?>
+                  <?php if (!empty($ticket['admin_remark'])) : ?>
                     <div class="form-actions">
                       <div class="post col-md-12">
                         <div class="user-profile-pic-wrapper">
@@ -100,9 +109,9 @@ check_login();
                         <div class="info-wrapper">
 
                           <br>
-                          <?php echo $row['admin_remark']; ?>
+                          <?php echo $ticket['admin_remark']; ?>
                           <hr>
-                          <p class="small-text">Publicado en <?php echo $row['admin_remark_date']; ?></p>
+                          <p class="small-text">Publicado en <?php echo $ticket['admin_remark_date']; ?></p>
                         </div>
                         <div class="clearfix"></div>
                       </div>
@@ -113,12 +122,13 @@ check_login();
                 </div>
               </div>
             <?php }
-        } else { ?>
+      } else { ?>
             <h3 align="center" style="color:red;">Sin registros que mostrar</h3>
           <?php } ?>
             </div>
           </div>
     </div>
+  </div>
   </div>
   </div>
   </div>

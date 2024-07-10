@@ -1,0 +1,98 @@
+{
+    "admin": [
+      {
+        "id": 1,
+        "name": "configuroweb",
+        "password": "1234abcd.."
+      }
+    ],
+    "prequest": [
+      {
+        "id": 1,
+        "name": "Mark Cooper",
+        "email": "pcliente@cweb.com",
+        "contactno": "3052589471",
+        "company": "ConfiguroWeb",
+        "services": ["Recuperación de Información"],
+        "others": "",
+        "query": "Se solicita ayuda analizando el disco duro",
+        "status": 0,
+        "posting_date": "2022-11-29",
+        "remark": "Registro Observaciones"
+      },
+      {
+        "id": 2,
+        "name": "Juan Cliente",
+        "email": "jcliente@cweb.com",
+        "contactno": "3025897461",
+        "company": "ConfiguroWeb",
+        "services": ["Recuperación de Información"],
+        "others": "",
+        "query": "Se solicita ayuda analizando el disco duro, para recuperar información, ya que fue eliminada.",
+        "status": 0,
+        "posting_date": "2023-01-11",
+        "remark": "Se realiza el proceso solicitado a satisfacción."
+      }
+    ],
+    "ticket": [
+      {
+        "id": 13,
+        "ticket_id": "6",
+        "email_id": "pcliente@cweb.com",
+        "subject": "Fallo con el Servidor IDPROD 26",
+        "task_type": "Fallo a Nivel de Servidor",
+        "prioprity": "importante",
+        "ticket": "Es necesario reiniciar la máquina de estados",
+        "attachment": null,
+        "status": "closed",
+        "admin_remark": "Se realiza el proceso solicitado a satisfacción.",
+        "posting_date": "2022-11-29",
+        "admin_remark_date": "2023-01-11 22:28:16"
+      }
+    ],
+    "user": [
+      {
+        "id": 1,
+        "name": "Mauricio Sevilla",
+        "email": "hola@cweb.com",
+        "alt_email": "admin@cweb.com",
+        "password": "1234abcd..",
+        "mobile": "3162430081",
+        "gender": "male",
+        "address": "Calle 45 23 21",
+        "status": null,
+        "posting_date": "2021-04-22 12:25:19"
+      },
+      {
+        "id": 2,
+        "name": "Pedro Cliente",
+        "email": "pcliente@cweb.com",
+        "alt_email": "pecliente@cweb.com",
+        "password": "1234abcd..",
+        "mobile": "3025869471",
+        "gender": "m",
+        "address": "Sample Address only",
+        "status": null,
+        "posting_date": "2022-11-29 03:28:28"
+      }
+    ],
+    "usercheck": [
+      {
+        "id": 4,
+        "logindate": "2022/11/29",
+        "logintime": "09:36:21am",
+        "user_id": 2,
+        "username": "Pedro Cliente",
+        "email": "pcliente@cweb.com"
+      },
+      {
+        "id": 5,
+        "logindate": "2023/01/10",
+        "logintime": "04:00:59am",
+        "user_id": 3,
+        "username": "Juan Cliente",
+        "email": "jcliente@cweb.com"
+      }
+    ]
+  }
+  
